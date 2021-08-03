@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+    <title>D'bocados | Cotizar</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="main-header__container">
+            <h1 class="main-title"><a href="/index.html">D'Bocados</a></h1> 
+            <div class="menu-hamburger" id="hamburger"></div>
+
+            <!-- MENU -->
+            <div class="menu">
+                <nav class="main-nav" id="nav">
+                    <ul class="main-menu">
+                        <li class="menu-item"><a class="menu-link" href="/pages/classic.html">Pasteles Clásicos</a></li>
+                        <li class="menu-item"><a class="menu-link" href="/pages/thematics.html">Pasteles Personalizados</a></li>
+                        <li class="menu-item"><a class="menu-link" href="/pages/dripcake.html">Drip Cakes</a></li>
+                        <li class="menu-item"><a class="menu-link" href="#">Cursos</a></li>
+                        <li class="menu-item"><a class="menu-link" href="#">Cotiza</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- FORMULARIO COTIZAR -->
+        <section class="order-section thematic-section">
+
+            <h2 class="classic-title section-title thematic-title" id="orderTitle">Cotiza tu pastel</h2>
+
+            <div class="order-sent" id="orderSent">Tu pedido ha sido enviado, pronto te contactaremos</div>
+
+                <!-- DATOS PERSONALES -->
+                <div class="order-container">
+
+                    <h3 class="order-subtitle"><span class="order-step">Paso 1: </span> Datos Personales</h3>
+
+                    <form class="order-form" id="orderForm">
+                        <label for="" class="order-item"> Nombre                        
+                            <input type="text" name="name" id="orderName" placeholder="Indicanos tu nombre" required class="item-input order-name">
+                        </label>
+
+                        <label for="" class="order-item"> Correo
+                            <input type="email" name="email" id="orderEmail" placeholder="Correo" required class="item-input order-email">
+                        </label>
+
+                        <label for="" class="order-item"> Teléfono
+                            <input type="tel" name="phone-number" id="orderPhone" placeholder="Número telefónico" required class="item-input order-phone">
+                        </label>
+                                                
+                        <!-- TIPO DE PASTEL -->
+                        <h3 class="order-subtitle"><span class="order-step">Paso 2: </span> ¿Que tipo de pastel deseas?</h3>
+
+                        <label for=""class="order-item"> Elige el tipo de pastel
+                            <!-- <input class="item-input type-of-cake" type="list" list="orderTypeOfCake" placeholder="Elige una opción" id="typeOfCake"  onchange="selectTypeOfCake()">
+                                <datalist id="orderTypeOfCake" >
+                                    <option value="Clásico"></option>
+                                    <option value="Personalizado"></option>
+                                    <option value="Drip Cake"></option>
+                                </datalist> -->
+
+                                <select id="typeOfCake" class="item-input type-of-cake" onchange="selectTypeOfCake()">
+
+                                    <option value="Elije una opción">Elije una opción</option>
+                                    <option value="Clásico">Clásico</option>
+                                    <option value="Personalizado">Personalizado</option>
+                                    <option value="Drip Cake">Drip Cake</option>
+                                    
+                                </select>
+                        </label>
+
+                        <!-- PASTELES CLÁSICOS -->
+                        <div class="classic-wrapp">
+                            <h3 class="order-subtitle"><span class="order-step">Paso 3: </span>¿Que pastel clásico deseas?</h3>
+
+                            <label for=""class="order-item"> Elige el pastel clásico que deseas
+                            <input class="item-input classic-cake-order" type="list" list="orderClassicCake" autocomplete="off" placeholder="Elige una opción" id="classicCakeOrder">
+                                <datalist id="orderClassicCake">
+                                    <option value="Tres Leches"></option>
+                                    <option value="Tres leches Imperial"></option>
+                                    <option value="Tres leches de Chocolate"></option>
+                                    <option value="Torta de Chocolate"></option>
+                                    <option value="Torta de Arequipe"></option>
+                                    <option value="Selva Negra"></option>
+                                    <option value="Pie de Limón"></option>
+                                    <option value="Brownie"></option>
+                                </datalist>
+                            </label>
+                        </div>
+
+
+                        <!-- PASTELES PERSONALIZADOS -->
+                        <div class="thematic-wrapp">
+                            <h3 class="order-subtitle"><span class="order-step">Paso 3: </span>¿Que pastel temático deseas?</h3>
+
+                            <legend class="grid-order">Sabor del bizcocho:
+                                <input type="list" list="flavorList" class="item-input grid-input thematic-flavor-order" placeholder="Elige una opción" id="thematicFlavorOrder">
+                                <datalist id="flavorList">
+                                    <option value="Chocolate"></option>
+                                    <option value="Vainilla"></option>
+                                </datalist>
+                            </legend>
+
+                            <legend class="grid-order">Sabor del relleno:
+                                <input type="list" list="saborRellenoList" class="item-input grid-input thematic-filling-order" placeholder="Elige una opción" id="thematicFillingOrder">
+                                <datalist id="saborRellenoList">
+                                    <option value="Chocolate"></option>
+                                    <option value="Arequipe"></option>
+                                    <option value="Crema Chantilly"></option>
+                                </datalist>
+                            </legend>
+                            
+                            <label class="grid-order" for="">                          
+                                Indicanos el tema de tu pastel
+                                <input type="text" name="theme-order" placeholder="Tema" id="thematicThemeOrder" class="item-input grid-input thematic-theme-order">
+                            </label>
+
+                            <label class="grid-order" for="">                          
+                                Indicanos el nombre que deseas en tu pastel
+                                <input type="text" name="thematic" placeholder="Nombre de tu pastel" id="thematicNameOrder" class="item-input grid-input thematic-name-order">
+                            </label>
+
+                            <legend class="grid-order">Color de tu pastel:
+                                <input type="list" list="colorList" class="item-input grid-input thematic-color-order" placeholder="Elige una opción" id="thematicColorOrder">
+                                <datalist id="colorList">
+                                    <option value="Blanco"></option>
+                                    <option value="Rojo"></option>
+                                    <option value="Azul claro"></option>
+                                    <option value="Azul oscuro"></option>
+                                    <option value="Amarillo"></option>
+                                    <option value="Verde claro"></option>
+                                    <option value="Verde oscuro"></option>
+                                    <option value="Rosado claro"></option>
+                                    <option value="Rosado oscuro"></option>
+                                    <option value="Morado"></option>
+                                </datalist>
+                            </legend>
+
+                            <label class="grid-order" for="">¿Deseas fondant?
+                                <input type="list" list="orderFondant" class="item-input grid-input thematic-fondant-order" placeholder="Elige una opción" id="thematicFondantOrder">
+                                <datalist id="orderFondant">
+                                    <option value="Si"></option>
+                                    <option value="No"></option>
+                                </datalist>
+                            </label>   
+                        </div>                     
+
+                            <!-- DRIP CAKE -->
+                            <div class="dripcake-wrapp">
+                                <h3 class="order-subtitle"><span class="order-step">Paso 3: </span>Personaliza tu drip cake</h3>
+
+                                <legend class="grid-order">Sabor del bizcocho:
+                                    <input type="list" list="saborList" class="item-input grid-input dripcake-flavor-order" placeholder="Elige una opción" id="dripcakeFlavorOrder">
+                                    <datalist id="saborList">
+                                        <option value="Chocolate"></option>
+                                        <option value="Vainilla"></option>
+                                    </datalist>
+                                </legend>
+        
+                                <legend class="grid-order">Sabor del relleno:
+                                    <input type="list" list="saborRellenoList" class="item-input grid-input dripcake-filling-order" placeholder="Elige una opción" id="dripcakeFillingOrder">
+                                    <datalist id="saborRellenoList">
+                                        <option value="Chocolate"></option>
+                                        <option value="Arequipe"></option>
+                                        <option value="Crema Chantilly"></option>
+                                    </datalist>
+                                </legend>
+
+                                <label class="grid-order" for="">                          
+                                    Indicanos el nombre que deseas en tu pastel
+                                    <input type="text" name="thematic" placeholder="Nombre de tu pastel" id="dripcakeName" class="item-input grid-input dripcake-name">
+                                </label>
+                    
+                                <legend class="grid-order">Color de tu pastel:
+                                    <input type="list" list="colorList" class="item-input grid-input dripcake-color-order" placeholder="Elige una opción" id="dripcakeColorOrder">
+                                    <datalist id="colorList">
+                                        <option value="Blanco"></option>
+                                        <option value="Rojo"></option>
+                                        <option value="Azul claro"></option>
+                                        <option value="Azul oscuro"></option>
+                                        <option value="Amarillo"></option>
+                                        <option value="Verde claro"></option>
+                                        <option value="Verde oscuro"></option>
+                                        <option value="Rosado claro"></option>
+                                        <option value="Rosado oscuro"></option>
+                                        <option value="Morado"></option>
+                                    </datalist>
+                                </legend>
+
+                                <legend class="grid-order">Color de la decoración de tu pastel:
+                                    <input type="list" list="colorList" class="item-input grid-input dripcake-decoration-order" placeholder="Elige una opción" id="dripcakeDecorationOrder">
+                                    <datalist id="colorList" >
+                                        <option value="Blanco"></option>
+                                        <option value="Rojo"></option>
+                                        <option value="Azul claro"></option>
+                                        <option value="Azul oscuro"></option>
+                                        <option value="Amarillo"></option>
+                                        <option value="Verde claro"></option>
+                                        <option value="Verde oscuro"></option>
+                                        <option value="Rosado claro"></option>
+                                        <option value="Rosado oscuro"></option>
+                                        <option value="Morado"></option>
+                                    </datalist>
+                                    </legend> 
+                                </div>
+
+                            <!-- ULTIMO PASO -->
+                            <h3 class="order-subtitle"><span class="order-step">Paso 4: </span>Paso final de su orden</h3>
+
+                        <legend class="grid-order">¿Para cuantas personas es el pastel?:
+                            <input type="list" list="numberList" class="item-input grid-input people-order" placeholder="Elige un rango" id="peopleOrder">
+                            <datalist id="numberList">
+                                <option value="8 - 12"></option>
+                                <option value="13 - 15"></option>
+                                <option value="16 - 20"></option>
+                                <option value="21 - 25"></option>
+                                <option value="26 - 30"></option>
+                            </datalist>
+                        </legend> 
+                        
+                        <legend class="grid-order">¿Para cuando lo desea?:
+                            <input type="date" list="numberList" class="item-input grid-input date-order" id="dateOrder">
+                        </legend> 
+
+
+
+                        <button type="submit" class="send-order" id="sendOrder">Realizar Pedido</button>
+                        
+                    </form>
+                </div>
+        </section>        
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- REDES SOCIALES -->
+            <div class="social-networks footer-item">
+                <h2 class="item-title">Redes Sociales</h2>
+                <ul class="footer-list">
+                    <li class="footer-list__item"><a target="_blank" href="https://www.facebook.com/DBocados-101036594942844" class="menu-link"><span class="jam jam-facebook-circle"></span>Facebook</a></li>
+                    <li class="footer-list__item"><a target= "_blank" href="https://instagram.com/ydebocado?utm_medium=copy_link" class="menu-link"><span class="jam jam-instagram"></span>Instagram</a></li>
+                    <li class="footer-list__item"><a href="https://vm.tiktok.com/ZMdvTAdqR/" class="menu-link"><span class="jam jam-users"></span>Tik Tok</a></li>
+                </ul>
+            </div>
+            <!-- CONTACTO -->
+            <div class="contact footer-item">
+                <h2 class="item-title">Contactos</h2>
+                <ul class="footer-list">
+                    <li class="footer-list__item"><span class="jam jam-whatsapp"><a target="_blank" href="https://bit.ly/Dbocadosvzla" class="whatsapp"></span> Whatsapp: +584241781488</a></li>
+                    <li class="footer-list__item"><span class="jam jam-inbox"></span> Correo: dbocados07@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase.js"></script>
+    <script src="/scripts/order.js"></script>
+    <script src="/scripts/index.js"></script>
+
+
+</body>
+</html>
